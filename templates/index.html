@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clima en Asunción</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            text-align: center;
+        }
+        
+        .clima-info p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        
+        .error {
+            color: red;
+        }
+        
+        h1, h2 {
+            color: #4a90e2;
+        }
+        
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: left;
+            overflow: auto;
+            font-size: 0.95em;
+            color: #333;
+            max-height: 200px;
+        }        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌞 Clima en Asunción</h1>
+        {% if clima.error %}
+            <p class="error">Error: {{ clima.error }}</p>
+        {% else %}
+            <div class="clima-info">
+                <p><strong>📅 Día:</strong> {{ clima.dia }}</p>
+                <p><strong>🌡️ Temperatura:</strong> {{ clima.temperatura }}°C</p>
+                <p><strong>💧 Humedad:</strong> {{ clima.humedad }}%</p>
+                <p><strong>💨 Velocidad del Viento:</strong> {{ clima.velocidad_viento }} m/s</p>
+                <p><strong>☔ Probabilidad de Lluvia:</strong> {{ clima.probabilidad_lluvia }} mm</p>
+                <p><strong>🔎 Descripción:</strong> {{ clima.icono }} {{ clima.descripcion }}</p>
+            </div>
+        {% endif %}
+
