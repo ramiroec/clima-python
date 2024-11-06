@@ -19,7 +19,7 @@ Este proyecto es una aplicación web en Python que obtiene datos de clima en tie
 1. **Clona este repositorio** o descarga el código fuente:
 
    ```bash
-   git clone https://github.com/tuusuario/proyecto-clima.git
+   git clone https://github.com/ramiroec/clima-python.git
    cd proyecto-clima
    ```
 
